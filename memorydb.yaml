@@ -1,0 +1,98 @@
+---
+# yamllint disable rule:line-length
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: |
+  Cloudformation template for provisioning a MemoryDB cluster
+
+Parameters:
+  Name:
+    Type: String
+    Description: Name of the MemoryDB cluster.
+
+  NodeType:
+    Type: String
+    Default: db.r6g.large # Visit https://aws.amazon.com/memorydb/pricing/#On-Demand_Nodes for the available node types.
+    Description: The cluster's on-demand node type.
+
+  Port:
+    Type: Number
+    Default: 6379 # Default Redis port
+    Description: The port used by the cluster.
+
+  VpcSubnetIds:
+    Type: CommaDelimitedList
+    Default: ""
+    Description: A list of VPC subnet IDs for the subnet group.
+
+  ReplicaPerShardCount:
+    Type: Number
+    Default: 1
+    Description: The number of replicas to apply to each shard.
+
+  ShardCount:
+    Type: Number
+    Default: 0
+    Description: The number of shards in the cluster.
+
+  # !Note: This is the default naming convention for the subnetgroup, can be overwritten.
+  SubnetGroupName:
+    Type: String
+    Default: !Join ["-", [!Ref Name, "subnetgroup"]]
+
+  # !Note: This is the default naming convention for the final snapshot, can be overwritten.
+  FinalSnapshotName:
+    Type: String
+    Default: !Join ["-", [!Ref Name, "final-snapshot"]]
+
+  # !Note: This is the default naming convention for the ACL, can be overwritten.
+  AclName:
+    Type: String
+    Default: !Join ["-", [!Ref Name, "acl"]]
+
+Resources:
+  # Specifies a cluster. All nodes in the cluster run the same protocol-compliant engine software.
+  Cluster:
+    Type: AWS::MemoryDB::Cluster
+    Properties:
+      ACLName: !Ref Acl
+      AutoMinorVersionUpgrade: true
+      ClusterName: !Ref Name
+      FinalSnapshotName: !Ref FinalSnapshotName
+      NodeType: !Ref NodeType
+      NumReplicasPerShard: !Ref ReplicaPerShardCount
+      NumShards: !Ref ShardCount
+      ParameterGroupName: String
+      Port: !Ref Port
+      SubnetGroupName: !Ref SubnetGroupName
+      TLSEnabled: true
+
+  # Collection of subnets that you can designate for your clusters running in a VPC.
+  SubnetGroup:
+    Type: AWS::MemoryDB::SubnetGroup
+    Properties:
+      SubnetGroupName: !Ref SubnetGroupName
+      SubnetIds: !Ref VpcSubnetIds
+
+  # Specifies an Access Control List.
+  Acl:
+    Type: AWS::MemoryDB::ACL
+    Properties:
+      ACLName: !Ref AclName
+
+Outputs:
+  ClusterArn:
+    Description: Arn of the MemoryDB cluster.
+    Value: !GetAtt Cluster.Arn
+
+  ClusterAddress:
+    Description: The address of the cluster's configuration endpoint.
+    Value: !GetAtt Cluster.ClusterEndpoint.Address
+
+  ClusterPort:
+    Description: The port used by the cluster configuration endpoint.
+    Value: !GetAtt Cluster.ClusterEndpoint.Port
+
+  ClusterStatus:
+    Description: The status of the cluster. For example, 'available', 'updating' or 'creating'.
+    Value: !GetAtt Cluster.Status
