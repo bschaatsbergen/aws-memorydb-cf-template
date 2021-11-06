@@ -1,0 +1,23 @@
+---
+# yamllint disable rule:line-length
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: |
+  Example Cloudformation template for provisioning a MemoryDB cluster using a nested stack.
+
+Parameters:
+  MemoryDbTemplateUrl:
+    Type: String
+    Default: "https://aws-memorydb-cf-template.s3.eu-central-1.amazonaws.com/memorydb.yaml"
+    Description: This points to the MemoryDB nested stack template residing in Amazon S3.
+
+Resources:
+  MemoryDBCluster:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Ref MemoryDbTemplateUrl
+      TimeoutInMinutes: 2
+      Parameters:
+        Name: !Join ["-", ["test", "my-app", "service"]]
+        NodeType: db.r6g.large
+        VpcSubnetIds: subnet-0f9cbdb2cb5d98e23,subnet-03e73043118a57ffe,subnet-044a6de40ec3a0c37
