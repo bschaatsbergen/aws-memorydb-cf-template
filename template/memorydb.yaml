@@ -12,12 +12,12 @@ Parameters:
 
   NodeType:
     Type: String
-    Default: "db.r6g.large"
+    Default: "db.r6g.large" # Visit https://aws.amazon.com/memorydb/pricing/#On-Demand_Nodes for the available node types.
     Description: The cluster's on-demand node type.
 
   Port:
     Type: Number
-    Default: 6379
+    Default: 6379 # Default Redis port
     Description: The port used by the cluster.
 
   SubnetIds:
