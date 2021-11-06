@@ -22,6 +22,7 @@ Parameters:
 
   SubnetIds:
     Type: CommaDelimitedList
+    Default: ""
     Description: A list of VPC subnet IDs for the subnet group.
 
   ReplicaPerShardCount:

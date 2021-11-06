@@ -20,4 +20,3 @@ Resources:
       Parameters:
         Name: !Join ["-", ["test", "example", "db"]]
         NodeType: db.r6g.large
-        SubnetIds: subnet-0f9cbdb2cb5d98e23,subnet-03e73043118a57ffe,subnet-044a6de40ec3a0c37
