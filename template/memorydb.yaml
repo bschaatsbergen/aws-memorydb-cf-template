@@ -53,7 +53,8 @@ Resources:
       NumReplicasPerShard: !Ref ReplicaPerShardCount
       NumShards: 0
       Port: !Ref Port
-      SubnetGroupName: !If [UserProvidedSubnetIds, !Ref SubnetGroup, AWS::NoValue]
+      SubnetGroupName:
+        !If [UserProvidedSubnetIds, !Ref SubnetGroup, AWS::NoValue]
       TLSEnabled: true
 
   # Collection of subnets that you can designate for your clusters running in a VPC.
