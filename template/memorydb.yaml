@@ -20,7 +20,7 @@ Parameters:
     Default: 6379
     Description: The port used by the cluster.
 
-  VpcSubnetIds:
+  SubnetIds:
     Type: CommaDelimitedList
     Default: ""
     Description: A list of VPC subnet IDs for the subnet group.
@@ -36,10 +36,7 @@ Parameters:
     Description: The number of shards in the cluster.
 
 Conditions:
-  UserProvidedVpcSubnetIds: !Not
-    - !Equals
-      - !Ref VpcSubnetIds
-      - ""
+  UserProvidedSubnetIds: !Not [!Equals [!Ref SubnetIds, ""]]
 
 Resources:
   # Specifies a cluster. All nodes in the cluster run the same protocol-compliant engine software.
@@ -60,10 +57,10 @@ Resources:
   # Collection of subnets that you can designate for your clusters running in a VPC.
   SubnetGroup:
     Type: AWS::MemoryDB::SubnetGroup
-    Condition: UserProvidedVpcSubnetIds
+    Condition: UserProvidedSubnetIds
     Properties:
       SubnetGroupName: !Join ["-", [!Ref Name, "subnetgroup"]]
-      SubnetIds: !Ref VpcSubnetIds
+      SubnetIds: !Ref SubnetIds
 
   # Specifies an Access Control List.
   Acl:
