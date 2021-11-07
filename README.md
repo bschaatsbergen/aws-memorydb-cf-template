@@ -26,7 +26,7 @@ MemoryDBCluster:
         SubnetIds: subnet-09d2d15449da1bd1d, subnet-03f0d954893yy57b1, subnet-0a65961be8520157b
 ```
 
-## Resources
+## Provisioned resources
 
 | Name                                                                                                                                | Type     |
 | ----------------------------------------------------------------------------------------------------------------------------------- | -------- |
@@ -35,7 +35,7 @@ MemoryDBCluster:
 | [AWS::MemoryDB::ACL](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-acl.html)                 | resource |
 | [AWS::SNS::Topic](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html)                     | resource |
 
-## Parameters
+## Stack Parameters
 
 | Name                 | Description                                    | Type           | Default      | Required |
 | -------------------- | ---------------------------------------------- | -------------- | ------------ | :------: |
