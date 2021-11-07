@@ -1,6 +1,6 @@
-# AWS MemoryDB CloudFormation templates
+# AWS MemoryDB CloudFormation template
 
-A library of CloudFormation templates that allows you to embed and deploy a MemoryDB cluster as nested stacks in your CloudFormation template.
+A library of CloudFormation template that allows you to embed and deploy a MemoryDB cluster as nested stacks in your CloudFormation template.
 
 ## What is AWS MemoryDB?
 
@@ -51,4 +51,4 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Deployment
 
-The `/templates` directory is automatically synced with the S3 bucket defined under `s3.tf` when a commit to `main` is done.
+The `/template` directory is automatically synced with the S3 bucket defined under `s3.tf` when a commit to `main` is done.
