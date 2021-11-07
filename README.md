@@ -1,6 +1,6 @@
 # AWS MemoryDB CloudFormation template
 
-CloudFormation template that allows you to embed and deploy a MemoryDB cluster as nested stacks in your other CloudFormation templates.
+CloudFormation template that allows you to embed and deploy a MemoryDB cluster as nested stack in your other CloudFormation templates.
 
 ## What is AWS MemoryDB?
 
