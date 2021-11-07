@@ -30,15 +30,15 @@ Parameters:
     Default: ""
     Description: A list of security group names to associate with this cluster.
 
-  ReplicaPerShardCount:
-    Type: Number
-    Default: 1
-    Description: The number of replicas to apply to each shard.
-
   ShardCount:
     Type: Number
     Default: 1
     Description: The number of shards in the cluster.
+
+  ReplicaPerShardCount:
+    Type: Number
+    Default: 1
+    Description: The number of replicas to apply to each shard.
 
 Conditions:
   UserProvidedSubnetIds: !Not # Checks whether 'SubnetIds' has been set or not.
