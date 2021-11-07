@@ -53,4 +53,4 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Deployment
 
-The [/template](template) directory is automatically synced with the S3 bucket created under `s3.tf` when a commit to `main` is done.
+The [/template](template) directory is automatically synced with the S3 bucket when a commit to `main` is done.
