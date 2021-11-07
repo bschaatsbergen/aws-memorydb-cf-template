@@ -3,10 +3,10 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
 Description: |
-  Example Cloudformation template for provisioning a MemoryDB cluster using a nested stack.
+  Example CloudFormation template for provisioning a MemoryDB cluster as nested stack.
 
 Parameters:
-  MemoryDbTemplateUrl:
+  MemoryDbTemplateUrl: # Create a parameter to reference the CloudFormation MemoryDB template.
     Type: String
     Default: "https://aws-memorydb-cf-template.s3.eu-central-1.amazonaws.com/memorydb.yaml"
     Description: This points to the MemoryDB nested stack template residing in Amazon S3.
