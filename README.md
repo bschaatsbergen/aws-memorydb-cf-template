@@ -2,6 +2,10 @@
 
 A library of CloudFormation templates that allows you to embed and deploy a MemoryDB cluster as nested stacks in your CloudFormation template.
 
+## What is AWS MemoryDB?
+
+MemoryDB is an in-memory, Redis compatible, multi-AZ database. MemoryDB leverages a distributed transaction log to durably store data across multiple AZs, meaning if a node or the entire cluster goes down, there's no data loss.
+
 ## Usage examples
 
 ### memorydb.yaml
