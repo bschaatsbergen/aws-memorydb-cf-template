@@ -16,7 +16,7 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Properties:
       TemplateURL: !Ref MemoryDbTemplateUrl
-      TimeoutInMinutes: 2
+      TimeoutInMinutes: 20
       Parameters:
         Name: !Join ["-", ["test", "example", "db"]]
         NodeType: db.r6g.large
