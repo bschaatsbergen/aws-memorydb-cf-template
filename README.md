@@ -8,6 +8,8 @@ MemoryDB is an in-memory, Redis compatible, multi-AZ database. MemoryDB leverage
 
 ## Usage examples
 
+Take a look at the `[how-to-use.yaml](example/how-to-use.yaml)` if you want to see an example stack using this template.
+
 ### memorydb.yaml
 
 Template URL: `https://aws-memorydb-cf-template.s3.eu-central-1.amazonaws.com/memorydb.yaml`
@@ -51,4 +53,4 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Deployment
 
-The `/template` directory is automatically synced with the S3 bucket defined under `s3.tf` when a commit to `main` is done.
+The `[/template](template)` directory is automatically synced with the S3 bucket defined under `s3.tf` when a commit to `main` is done.
