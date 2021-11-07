@@ -6,7 +6,7 @@ A library of CloudFormation templates that allows you to embed and deploy a Memo
 
 ### memorydb.yaml
 
-Template URL: `https://aws-memorydb-cf-templates.s3.eu-central-1.amazonaws.com/memorydb.yaml`
+Template URL: `https://aws-memorydb-cf-template.s3.eu-central-1.amazonaws.com/memorydb.yaml`
 
 ```
 MemoryDBCluster:
