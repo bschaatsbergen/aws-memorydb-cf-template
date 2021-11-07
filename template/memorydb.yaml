@@ -32,7 +32,7 @@ Parameters:
 
   ShardCount:
     Type: Number
-    Default: 0
+    Default: 1
     Description: The number of shards in the cluster.
 
 Conditions:
