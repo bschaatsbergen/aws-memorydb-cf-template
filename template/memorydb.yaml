@@ -57,7 +57,7 @@ Resources:
       SubnetGroupName: !If [
           UserProvidedSubnetIds, # Conditional
           !Join ["-", [!Ref Name, "subnetgroup"]], # If true
-          AWS::NoValue, # If false
+          !Ref AWS::NoValue, # If false
         ]
       TLSEnabled: true
 
