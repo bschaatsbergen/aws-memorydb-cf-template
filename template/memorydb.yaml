@@ -23,12 +23,12 @@ Parameters:
   SubnetIds:
     Type: CommaDelimitedList
     Default: ""
-    Description: A list of VPC subnet IDs for the subnet group.
+    Description: A comma delimited list of VPC subnet IDs for the subnet group.
 
   SecurityGroupIds:
     Type: CommaDelimitedList
     Default: ""
-    Description: A list of security group names to associate with this cluster.
+    Description: A comma delimited list of security group names to associate with this cluster.
 
   ShardCount:
     Type: Number
