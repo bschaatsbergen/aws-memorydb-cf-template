@@ -9,7 +9,7 @@ Parameters:
   MemoryDbTemplateUrl: # Create a parameter to reference the CloudFormation MemoryDB template.
     Type: String
     Default: "https://aws-memorydb-cf-template.s3.eu-central-1.amazonaws.com/memorydb.yaml"
-    Description: This points to the MemoryDB nested stack template residing in Amazon S3.
+    Description: This points to the nested MemoryDB stack template residing in Amazon S3.
 
 Resources:
   MemoryDBCluster:
