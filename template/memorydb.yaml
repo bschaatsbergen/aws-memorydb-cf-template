@@ -12,7 +12,7 @@ Parameters:
 
   NodeType:
     Type: String
-    Default: "db.r6g.large" # Visit https://aws.amazon.com/memorydb/pricing/#On-Demand_Nodes for the available node types.
+    Default: "db.t4g.small" # Visit https://aws.amazon.com/memorydb/pricing/#On-Demand_Nodes for the available node types.
     Description: The cluster's on-demand node type.
 
   Port:

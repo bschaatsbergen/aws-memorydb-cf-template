@@ -22,7 +22,7 @@ MemoryDBCluster:
         TimeoutInMinutes: 20
         Parameters:
         Name: !Join ["-", ["test", "example", "db"]]
-        NodeType: db.r6g.large
+        NodeType: db.t4g.small
         SubnetIds: subnet-09d2d15449da1bd1d, subnet-03f0d954893yy57b1, subnet-0a65961be8520157b
 ```
 
@@ -42,7 +42,7 @@ MemoryDBCluster:
 | Name                 | Description                                    | Type           | Default      | Required |
 | -------------------- | ---------------------------------------------- | -------------- | ------------ | :------: |
 | Name                 | Name of the MemoryDB cluster.                  | `string`       | n/a          |   yes    |
-| NodeType             | The cluster's on-demand node type.             | `string`       | db.r6g.large |    no    |
+| NodeType             | The cluster's on-demand node type.             | `string`       | db.t4g.small |    no    |
 | Port                 | The port used by the cluster.                  | `number`       | 6379         |    no    |
 | SubnetIds            | Subnets associated with cluster.               | `list(string)` | n/a          |    no    |
 | SecurityGroupIds     | Security group names associated with cluster.  | `list(string)` | n/a          |    no    |

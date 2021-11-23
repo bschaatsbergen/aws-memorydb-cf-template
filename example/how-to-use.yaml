@@ -19,4 +19,4 @@ Resources:
       TimeoutInMinutes: 20
       Parameters:
         Name: !Join ["-", ["test", "example", "db"]]
-        NodeType: db.r6g.large
+        NodeType: db.t4g.small
