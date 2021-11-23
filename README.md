@@ -23,7 +23,7 @@ MemoryDBCluster:
         Parameters:
         Name: !Join ["-", ["test", "example", "db"]]
         NodeType: db.t4g.small
-        SubnetIds: subnet-09d2d15449da1bd1d, subnet-03f0d954893yy57b1, subnet-0a65961be8520157b
+        SubnetIds: subnet-0cc31430175210b69,subnet-0f4c2b2d24dc5ff59,subnet-0f432d0eb9e49811f
 ```
 
 [![](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/new?stackName=memorydb-stack&templateURL=https://aws-memorydb-cf-template.s3.eu-central-1.amazonaws.com/memorydb.yaml)
