@@ -100,19 +100,19 @@ Resources:
     Properties:
       TopicName: !Join ["-", [!Ref Name, "events"]]
 
-Outputs:
-  ClusterArn:
-    Description: Arn of the MemoryDB cluster.
-    Value: !GetAtt Cluster.Arn
+# Outputs:
+#   ClusterArn:
+#     Description: Arn of the MemoryDB cluster.
+#     Value: !GetAtt Cluster.Arn
 
-  ClusterAddress:
-    Description: The address of the cluster's configuration endpoint.
-    Value: !GetAtt Cluster.ClusterEndpoint.Address
+#   ClusterAddress:
+#     Description: The address of the cluster's configuration endpoint.
+#     Value: !GetAtt Cluster.ClusterEndpoint.Address
 
-  ClusterPort:
-    Description: The port used by the cluster configuration endpoint.
-    Value: !GetAtt Cluster.ClusterEndpoint.Port
+#   ClusterPort:
+#     Description: The port used by the cluster configuration endpoint.
+#     Value: !GetAtt Cluster.ClusterEndpoint.Port
 
-  ClusterStatus:
-    Description: The status of the cluster. For example, 'available', 'updating' or 'creating'.
-    Value: !GetAtt Cluster.Status
+#   ClusterStatus:
+#     Description: The status of the cluster. For example, 'available', 'updating' or 'creating'.
+#     Value: !GetAtt Cluster.Status

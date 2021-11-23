@@ -20,4 +20,4 @@ Resources:
       Parameters:
         Name: !Join ["-", ["test", "example", "db"]]
         NodeType: db.t4g.small
-        SubnetIds: subnet-0cc31430175210b69,subnet-0f4c2b2d24dc5ff59,subnet-0f432d0eb9e49811f
+        SubnetIds: subnet-0fc31480375310b69,subnet-0c4c1b1d14dc5ff39,subnet-0d635d0eb9e49811f
