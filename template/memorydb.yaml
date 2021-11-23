@@ -56,7 +56,6 @@ Resources:
   Cluster:
     Type: AWS::MemoryDB::Cluster
     Properties:
-      ACLName: !Ref Acl
       AutoMinorVersionUpgrade: true
       ClusterName: !Ref Name
       FinalSnapshotName: !Join ["-", [!Ref Name, "final-snapshot"]]
@@ -88,12 +87,6 @@ Resources:
     Properties:
       SubnetGroupName: !Join ["-", [!Ref Name, "subnetgroup"]]
       SubnetIds: !Ref SubnetIds
-
-  # Specifies an Access Control List.
-  Acl:
-    Type: AWS::MemoryDB::ACL
-    Properties:
-      ACLName: !Join ["-", [!Ref Name, "acl"]]
 
   ClusterEventsTopic:
     Type: AWS::SNS::Topic
